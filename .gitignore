@@ -1,0 +1,9 @@
+node_modules/
+package-lock.json
+*.log
+.DS_Store
+dist/win-unpacked/
+dist/builder-debug.yml
+dist/builder-effective-config.yaml
+dist/.git/
+git

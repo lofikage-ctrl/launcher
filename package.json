@@ -1,0 +1,52 @@
+{
+    "name": "stream-rpg-launcher",
+    "version": "1.2.0",
+    "description": "Stream RPG Engine - Launcher & Cloud Bridge",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "build": "set CSC_IDENTITY_AUTO_DISCOVERY=false && electron-builder --win portable",
+        "pack": "electron-builder --dir"
+    },
+    "build": {
+        "appId": "com.streamrpg.launcher",
+        "productName": "Stream RPG Engine",
+        "win": {
+            "target": [
+                {
+                    "target": "portable",
+                    "arch": [
+                        "x64",
+                        "ia32"
+                    ]
+                }
+            ],
+            "icon": "assets/icon.ico"
+        },
+        "forceCodeSigning": false,
+        "files": [
+            "**/*",
+            "../cloud-bridge/**/*"
+        ],
+        "extraResources": [
+            {
+                "from": "../cloud-bridge",
+                "to": "cloud-bridge",
+                "filter": [
+                    "**/*"
+                ]
+            }
+        ]
+    },
+    "dependencies": {
+        "i18next": "^25.8.13",
+        "i18next-browser-languagedetector": "^8.2.1",
+        "react-i18next": "^16.5.4",
+        "socket.io-client": "^4.6.0",
+        "ws": "^8.14.0"
+    },
+    "devDependencies": {
+        "electron": "^28.0.0",
+        "electron-builder": "^24.0.0"
+    }
+}
