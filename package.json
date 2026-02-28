@@ -25,15 +25,17 @@
                 "from": "../cloud-bridge",
                 "to": "cloud-bridge",
                 "filter": [
-                    "**/*",
-                    "!node_modules/**/*"
+                    "**/*"
                 ]
             }
         ]
     },
     "dependencies": {
-        "ws": "^8.14.0",
-        "socket.io-client": "^4.6.0"
+        "i18next": "^25.8.13",
+        "i18next-browser-languagedetector": "^8.2.1",
+        "react-i18next": "^16.5.4",
+        "socket.io-client": "^4.6.0",
+        "ws": "^8.14.0"
     },
     "devDependencies": {
         "electron": "^28.0.0",
