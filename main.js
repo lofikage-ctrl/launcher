@@ -58,9 +58,11 @@ ipcMain.handle('start-bridge', async (event, channelId) => {
         // Set environment variable for channel ID so bridge.js can use it
         const env = { ...process.env, BRIDGE_CHANNEL_ID: channelId, BRIDGE_NONINTERACTIVE: '1' };
 
+        const bridgeDir = path.dirname(bridgePath);
         bridgeProcess = fork(bridgePath, [], {
             env,
-            silent: true
+            silent: true,
+            cwd: bridgeDir
         });
 
         bridgeProcess.stdout?.on('data', (data) => {
