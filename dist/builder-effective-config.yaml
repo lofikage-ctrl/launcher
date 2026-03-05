@@ -1,0 +1,23 @@
+directories:
+  output: dist
+  buildResources: build
+appId: com.streamrpg.launcher
+productName: Stream RPG Engine
+win:
+  target:
+    - target: portable
+      arch:
+        - x64
+        - ia32
+  icon: assets/icon.ico
+forceCodeSigning: false
+files:
+  - filter:
+      - '**/*'
+      - ../cloud-bridge/**/*
+extraResources:
+  - from: ../cloud-bridge
+    to: cloud-bridge
+    filter:
+      - '**/*'
+electronVersion: 28.3.3

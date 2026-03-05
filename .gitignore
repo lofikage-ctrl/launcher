@@ -1,9 +1,10 @@
-node_modules/
-package-lock.json
-*.log
-.DS_Store
-dist/win-unpacked/
-dist/builder-debug.yml
-dist/builder-effective-config.yaml
-dist/.git/
-git
+# Ignore everything
+*
+
+# But keep the dist folder with only the exe installer
+!dist/
+!dist/*.exe
+
+# Keep git config files
+!.gitignore
+!.gitattributes
